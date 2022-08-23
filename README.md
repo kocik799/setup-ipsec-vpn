@@ -318,21 +318,4 @@ This work is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unp
 Attribution required: please include my name in any derivative and let me know how you have improved it!
 
 ++++++++++++++++++++++++++++++++
-Create auto route ppp 
-# nano /etc/ppp/ip-up.d/"l2tp-gate"
-
-#!/bin/sh
-
-if [ "$5" = "192.168.0.10" ] ; then
-  ip route add 192.168.71.0/24 via "$5"
-fi
-
-if [ "$5" = "192.168.0.12" ] ; then
-  ip route add 192.168.80.0/24 via "$5"
-fi
-
-if [ "$5" = "192.168.0.11" ] ; then
-  ip route add 10.48.12.0/24 via "$5"
-  ip route add 192.168.49.0/24 via "$5"
-fi
-exit 0
+Создание маршрутов при поднятии vpn клиентов в файле routes
